@@ -1,0 +1,211 @@
+/*************** Import ****************/
+/* @import url("https://fonts.googleapis.com/css2?family=Bokor&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
+@font-face {
+  font-family: "adelle";
+  src: url(/src/assets/fonts/adelle-sans.otf);
+}
+/*************** Custom Properties ****************/
+:root {
+  --white_color: #ffffff;
+  --black_color: #000000;
+  --font_first_color: #333333;
+  --font_second_color: #555555;
+  --button_color: #656565e9;
+  --first_font: "adelle", normal;
+}
+/*************** Reset ****************/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  margin: 40px 302px 0px 320px;
+}
+
+body {
+  font-family: var(--first_font);
+  line-height: 22px;
+  overflow-x: hidden;
+  background-color: var(--white_color);
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+  color: var(--font_second_color);
+}
+a:hover {
+  color: var(--black_color);
+}
+
+ul {
+  list-style-type: none;
+  list-style-position: outside;
+}
+il ::before {
+  content: "· ";
+}
+p {
+  color: var(--font_second_color);
+}
+/*************** Site Styles ****************/
+
+/*********** Footer ************/
+footer {
+  & .footer_container {
+    display: flex;
+    flex-direction: column;
+    margin: center;
+    width: 100%;
+    height: 707.562px;
+
+    & .logo_container {
+      display: flex;
+      width: 100%;
+      margin-bottom: 1.5%;
+
+      & img {
+        width: 135px;
+        height: 35px;
+      }
+    }
+    & .grid_container {
+      display: grid;
+      height: auto;
+      width: 100%;
+      grid-template-columns: 280px repeat(5, 1fr);
+
+      & .title {
+        color: var(--font_first_color);
+        font-weight: bold;
+      }
+
+      & .grid_item {
+        display: flex;
+        flex-direction: column;
+        /****** Sixth Column ********/
+
+        & .flex_colum {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          display: flex;
+          flex-direction: column;
+
+          /****** First Column ********/
+          & .ul_suscription,
+          .ul_download_app {
+            display: flex;
+            flex-direction: column;
+            margin: center;
+            padding: 3px 0 24px 1px;
+          }
+          & .editor_info {
+            display: flex;
+            flex-direction: column;
+            margin: center;
+            padding: 3px 0 24px 1px;
+          }
+          & .copyright {
+            font-size: 12px;
+            line-height: 18px;
+          }
+
+          & .fiscal_info {
+            display: flex;
+            align-items: center;
+            padding: 8px 0 8px 0;
+            & .fiscal_text {
+              margin-left: 10px;
+              font-size: 12px;
+              line-height: 12px;
+              color: var(--font_second_color);
+            }
+          }
+          /****** Second Column ********/
+          & .ul_section,
+          .ul_services {
+            display: flex;
+            flex-direction: column;
+            margin: center;
+            padding: 3px 0 24px 1px;
+          }
+          /****** Third Column ********/
+          & .ul_games,
+          .ul_newsletters {
+            display: flex;
+            flex-direction: column;
+            margin: center;
+            padding: 3px 0 24px 1px;
+          }
+          /****** Quarter Column ********/
+          & .ul_group_clarin {
+            display: flex;
+            flex-direction: column;
+            margin: center;
+            padding: 3px 0 24px 1px;
+          }
+          /****** Fifth Column ********/
+          & .ul_digital_clarin,
+          .ul_publicity,
+          .ul_contact_us {
+            display: flex;
+            flex-direction: column;
+            margin: center;
+            padding: 3px 0 24px 1px;
+          }
+          /****** Sixth Column ********/
+          & .diario_dia_container {
+            display: flex;
+            padding: 1%;
+            padding-top: 24px;
+
+            & img {
+              width: 100%;
+              height: auto;
+              border: solid 1px var(--button_color);
+            }
+          }
+          & .button_diario_container {
+            display: flex;
+            width: 174px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            font-weight: 800;
+            font-size: 12px;
+            height: 44px;
+            color: var(--white_color);
+            border: none;
+            background-color: var(--font_second_color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+          }
+          .button_diario_container:hover {
+            background-color: var(--button_color);
+          }
+        }
+      }
+    }
+    & .redes_container {
+      display: flex;
+      flex-direction: row;
+      padding-top: 34px;
+      align-items: center;
+      justify-content: center;
+      & .icons_links {
+        border-top: solid 1px var(--button_color);
+        border-bottom: solid 1px var(--button_color);
+        padding: 24px 0 20px 0;
+      }
+      
+    }
+  }
+}
