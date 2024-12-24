@@ -1,18 +1,24 @@
 /*************** Import ****************/
-/* @import url("https://fonts.googleapis.com/css2?family=Bokor&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
+
 @font-face {
   font-family: "adelle";
   src: url(/src/assets/fonts/adelle-sans.otf);
 }
+
 /*************** Custom Properties ****************/
+
 :root {
   --white_color: #ffffff;
   --black_color: #000000;
-  --font_first_color: #333333;
+  --font_first_color: #4a4949;
   --font_second_color: #555555;
+  --font_third_color: #1f1d1d;
   --button_color: #656565e9;
   --first_font: "adelle", normal;
+  --icon_color: #65656561;
+  --border_icon_color: #656565;
 }
+
 /*************** Reset ****************/
 
 *,
@@ -22,101 +28,101 @@
   margin: 0;
   padding: 0;
 }
-
 html {
   font-size: 14px;
-  margin: 40px 302px 0px 320px;
 }
-
 body {
   font-family: var(--first_font);
   line-height: 22px;
   overflow-x: hidden;
   background-color: var(--white_color);
+  margin: 24px;
 }
-
 a {
   text-decoration: none;
   transition: 0.4s;
   color: var(--font_second_color);
 }
 a:hover {
-  color: var(--black_color);
+  color: var(--font_third_color);
 }
-
 ul {
   list-style-type: none;
   list-style-position: outside;
 }
-il ::before {
+li ::before {
   content: "· ";
+  padding-right: 1px;
 }
 p {
   color: var(--font_second_color);
 }
+
+/*************** Utilities ****************/
+
+.flex_column_center {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.width_max_porcentual {
+  width: 100%;
+}
+a.no-effect {
+  transition: none;
+}
+a.no-effect:hover {
+  color: var(--font_second_color);
+}
+li > a > span.no-before::before {
+  content: none;
+  padding-right: 0;
+}
+li > a.no-effect::before {
+  content: "·";
+  padding-right: 18px;
+}
+
 /*************** Site Styles ****************/
 
 /*********** Footer ************/
 footer {
   & .footer_container {
-    display: flex;
-    flex-direction: column;
-    margin: center;
-    width: 100%;
-    height: 707.562px;
-
+    width: 1280px;
     & .logo_container {
       display: flex;
-      width: 100%;
       margin-bottom: 1.5%;
-
       & img {
-        width: 135px;
-        height: 35px;
+        display: flex;
+        width: 130px;
+        height: 32px;
       }
     }
     & .grid_container {
       display: grid;
-      height: auto;
-      width: 100%;
-      grid-template-columns: 280px repeat(5, 1fr);
-
+      grid-template-columns: 250px repeat(5, 1fr);
+      padding-top: 24px;
+      padding-bottom: 24px;
+      grid-column-gap: 24px;
       & .title {
         color: var(--font_first_color);
         font-weight: bold;
       }
-
       & .grid_item {
-        display: flex;
-        flex-direction: column;
         /****** Sixth Column ********/
-
         & .flex_colum {
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-          display: flex;
-          flex-direction: column;
-
           /****** First Column ********/
           & .ul_suscription,
           .ul_download_app {
-            display: flex;
-            flex-direction: column;
-            margin: center;
             padding: 3px 0 24px 1px;
           }
           & .editor_info {
-            display: flex;
-            flex-direction: column;
-            margin: center;
             padding: 3px 0 24px 1px;
           }
           & .copyright {
             font-size: 12px;
             line-height: 18px;
           }
-
           & .fiscal_info {
             display: flex;
             align-items: center;
@@ -131,33 +137,21 @@ footer {
           /****** Second Column ********/
           & .ul_section,
           .ul_services {
-            display: flex;
-            flex-direction: column;
-            margin: center;
             padding: 3px 0 24px 1px;
           }
           /****** Third Column ********/
           & .ul_games,
           .ul_newsletters {
-            display: flex;
-            flex-direction: column;
-            margin: center;
             padding: 3px 0 24px 1px;
           }
           /****** Quarter Column ********/
           & .ul_group_clarin {
-            display: flex;
-            flex-direction: column;
-            margin: center;
             padding: 3px 0 24px 1px;
           }
           /****** Fifth Column ********/
           & .ul_digital_clarin,
           .ul_publicity,
           .ul_contact_us {
-            display: flex;
-            flex-direction: column;
-            margin: center;
             padding: 3px 0 24px 1px;
           }
           /****** Sixth Column ********/
@@ -165,26 +159,25 @@ footer {
             display: flex;
             padding: 1%;
             padding-top: 24px;
-
             & img {
-              width: 100%;
-              height: auto;
-              border: solid 1px var(--button_color);
+              width: 200px;
             }
           }
           & .button_diario_container {
             display: flex;
-            width: 174px;
+            width: 170px;
+            height: 85px;
             align-items: center;
             justify-content: center;
             margin-top: 10px;
+            border-radius: 25px;
+            padding: 10px 20px;
             font-weight: 800;
             font-size: 12px;
             height: 44px;
             color: var(--white_color);
             border: none;
             background-color: var(--font_second_color);
-            border-radius: 25px;
             cursor: pointer;
             transition: 0.3s;
           }
@@ -196,16 +189,66 @@ footer {
     }
     & .redes_container {
       display: flex;
-      flex-direction: row;
-      padding-top: 34px;
+      height: inherit;
       align-items: center;
       justify-content: center;
-      & .icons_links {
-        border-top: solid 1px var(--button_color);
-        border-bottom: solid 1px var(--button_color);
-        padding: 24px 0 20px 0;
+      padding: 24px 0 24px 0;
+      border-top: solid 1px var(--icon_color);
+      border-bottom: solid 1px var(--icon_color);
+      & .icon_container {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        & .icon_facebook,
+        .icon_twitter,
+        .icon_linkedin,
+        .icon_instagram,
+        .icon_tiktok,
+        .icon_youtube {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 36px;
+          width: 36px;
+          color: var(--icon_color);
+          border: solid 1px var(--border_icon_color);
+          border-radius: 100%;
+        }
       }
-      
     }
+    .tyc_container {
+      display: flex;
+      height: auto;
+      width: auto;
+      justify-content: center;
+      font-size: 12px;
+      padding-top: 24px;
+      & .ul_tyc {
+        display: flex;
+        flex-direction: row;
+        height: inherit;
+        width: inherit;
+        justify-content: center;
+        gap: 18px;
+        & span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/*************** Media Querys ****************/
+
+/*********** Footer ************/
+
+/******** Tablet *********/
+@media screen and (max-width: 1360px) {
+  .footer_container {
+    width: 100%;
+  }
+  .footer_container .grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
