@@ -6,7 +6,7 @@ Este entregable tiene como objetivo practicar los nuevos conceptos que hemos apr
 
 - Replicar el siguiente modelo de header: 
 <p align="center">
-  <img src="../css_entregable_2/src/assets/images/modelo_footer.png" />
+  <img src="./src/assets/images/modelo_footer.png" />
 </p>
 
 
