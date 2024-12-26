@@ -6,7 +6,6 @@
 }
 
 /*************** Custom Properties ****************/
-
 :root {
   --white_color: #ffffff;
   --black_color: #000000;
@@ -19,8 +18,8 @@
   --icon_color: #65656561;
   --border_icon_color: #656565;
   --mobile_color: #212121;
+  --scrollbg: #f0f0f0f0;
 }
-
 /*************** Reset ****************/
 *,
 *::after,
@@ -58,7 +57,6 @@ li ::before {
 p {
   color: var(--font_second_color);
 }
-
 /*************** Utilities ****************/
 .flex_column_center {
   display: flex;
@@ -254,12 +252,27 @@ footer {
   }
 }
 
+/*************** Scrollbar ****************/
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbg);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--icon_color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray_color);
+}
 /*************** Media Querys ****************/
 
 /*********** Footer ************/
 
 /******** Tablet *********/
-
 @media screen and (max-width: 1368px) {
   footer {
     .footer_container {
@@ -271,8 +284,7 @@ footer {
         margin-bottom: 1.5%;
       }
       .grid_container {
-        grid-template-columns: repeat(4,1fr);
-       
+        grid-template-columns: repeat(4, 1fr);
         grid-row-gap: 24px;
         .first_column {
           grid-column: 1/4;
@@ -288,9 +300,7 @@ footer {
     }
   }
 }
-
 /******** Mobile *********/
-
 @media screen and (max-width: 1024px) {
   body {
     background-color: #212121;
@@ -403,5 +413,10 @@ footer {
         color: var(--gray_color);
       }
     }
+  }
+  /*** Scrollbar ***/
+  ::-webkit-scrollbar-track {
+    background: var(--mobile_color);
+    border-radius: 10px;
   }
 }
