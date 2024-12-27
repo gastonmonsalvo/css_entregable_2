@@ -1,10 +1,9 @@
 /*************** Import ****************/
-
+/*********** Font ************/
 @font-face {
   font-family: "adelle";
   src: url(/src/assets/fonts/adelle-sans.otf);
 }
-
 /*************** Custom Properties ****************/
 :root {
   --white_color: #ffffff;
@@ -93,7 +92,6 @@ footer {
       display: flex;
       margin-bottom: 1.5%;
       & img {
-        display: flex;
         width: 130px;
         height: 32px;
       }
@@ -251,8 +249,7 @@ footer {
     }
   }
 }
-
-/*************** Scrollbar ****************/
+/************* Scrollbar **************/
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -268,24 +265,27 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gray_color);
 }
-/*************** Media Querys ****************/
-
+/************ Media Querys *************/
 /*********** Footer ************/
-
 /******** Tablet *********/
 @media screen and (max-width: 1368px) {
   footer {
     .footer_container {
-      display: flex;
+      width: fit-content;
       align-items: center;
       justify-content: center;
-      width: 1000px;
+
       & .logo_container {
+        display: flex;
+        justify-content: center;
         margin-bottom: 1.5%;
       }
       .grid_container {
         grid-template-columns: repeat(4, 1fr);
         grid-row-gap: 24px;
+        .grid_item{
+          padding-bottom: 40px;
+        }
         .first_column {
           grid-column: 1/4;
           & .special_grid {
@@ -296,12 +296,15 @@ footer {
             margin-bottom: 60px;
           }
         }
+        .second_column{
+          margin-left: 25px;
+        }
       }
     }
   }
 }
 /******** Mobile *********/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 580px) {
   body {
     background-color: #212121;
   }
@@ -327,6 +330,12 @@ footer {
     .footer_container {
       background-color: #212121;
       width: 100%;
+      & .logo_container {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        margin-bottom: 1.5%;
+      }
       .grid_container {
         width: 100%;
         grid-template-columns: 1fr;
